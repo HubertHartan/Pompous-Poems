@@ -2,8 +2,9 @@
 
 function App() {
   return (
-    <div>
-      
+    <div className="pageLinks">
+      <a>Home</a>
+      <a>Add Poem</a>
     </div>
   );
 }
