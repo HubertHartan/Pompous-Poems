@@ -54,16 +54,14 @@ const PoemForm = ({updateFn, unitInfo}) => {
     
     return (
         <form onSubmit={formHandler}>
-            <label htmlFor="code">Unit Code</label>
-            <input name="code" onChange={updateField} value={formInfo.code}></input>
+            <label htmlFor="author">Author</label>
+            <input name="author" onChange={updateField} value={formInfo.code}></input>
 
-            <label htmlFor="title">Unit Title</label>
+            <label htmlFor="title">Title</label>
             <input name="title" onChange={updateField} value={formInfo.title}></input>
 
-            <label htmlFor="offerings">Offerings&nbsp;</label>
-            S1 <input type="checkbox" onChange={updateField} name="offering" value="S1" defaultChecked={hasOffering("S1")}></input>
-            S2 <input type="checkbox" onChange={updateField} name="offering" value="S2" defaultChecked={hasOffering("S2")}></input>
-            S3 <input type="checkbox" onChange={updateField} name="offering" value="S3" defaultChecked={hasOffering("S3")}></input>
+            <label htmlFor="text">Text</label>
+            <input name="text" onChange={updateField} value={formInfo.title}></input>
 
 
             <input type="submit"></input>
