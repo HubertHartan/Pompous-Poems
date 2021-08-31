@@ -4,9 +4,24 @@
             "id": 0,
             "title": "Campervan",
             "author": "Bob Bobalooba",
-           
+            "text":"",
             "votes": 3
-        }        
+        },
+        {
+            "id": 1,
+            "title": "Tree",
+            "author": "Robert Bobbert",
+            "text":"",
+            "votes": 10
+        },
+        {
+            "id": 2,
+            "title": "Car",
+            "author": "Steven Leven",
+            "text":"",
+            "votes": 16
+        }
+                
 
 
 

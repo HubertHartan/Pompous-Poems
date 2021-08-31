@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 
-const poem = ({poem}) =>{
+const Poem = ({poem}) =>{
     return(
         <p>{poem.title}</p>,
         <p>{poem.author}</p>,
@@ -10,4 +10,4 @@ const poem = ({poem}) =>{
 
 }
 
-export default poem;
+export default Poem;
