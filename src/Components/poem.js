@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import PoemForm from './PoemForm.js'
 
 
-const Poem = ({poem}) =>{
+const Poem = ({poem, deleteFn, updateFn}) =>{
     const [editing, setEditing] = useState(false)
 
     const editAction = () => {
@@ -22,7 +22,7 @@ const Poem = ({poem}) =>{
     if (editing) {
       return (
         <li>
-        <UnitForm updateFn={finaliseEdit} unitInfo={unit} />
+        <PoemForm updateFn={finaliseEdit} poemInfo={poem} />
         <button onClick={cancelEdit}>Cancel Edit</button>
         </li>
       )
@@ -30,8 +30,8 @@ const Poem = ({poem}) =>{
     return (
         <li>{poem.author}: 
         {poem.title} 
-        {opem.text}
-        <button onClick={() => deleteFn(unit)}>Delete</button>
+        {poem.text}
+        <button onClick={() => deleteFn(poem)}>Delete</button>
         <button onClick={editAction}>Edit</button>
         </li>
       )

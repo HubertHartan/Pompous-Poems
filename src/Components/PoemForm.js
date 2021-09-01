@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import ReactMarkdown from 'react-markdown';
 
-const PoemForm = ({updateFn, unitInfo}) => {
+const PoemForm = ({updateFn, poemInfo}) => {
 
-    let initialState = unitInfo
+    let initialState = poemInfo
     if (!initialState) {
         initialState = {author: '', title: '', text: ''}
     }
