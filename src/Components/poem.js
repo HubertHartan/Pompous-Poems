@@ -9,10 +9,10 @@ const Poem = ({poem, deleteFn, updateFn}) =>{
       setEditing(true)
     }
     
-    const finaliseEdit =  (newUnit) => {
-      console.log(newUnit)
+    const finaliseEdit =  (newPoem) => {
+      console.log(newPoem)
       setEditing(false)
-      updateFn(newUnit)
+      updateFn(newPoem)
     }
   
     const cancelEdit = () => {

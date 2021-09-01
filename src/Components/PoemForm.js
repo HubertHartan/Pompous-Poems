@@ -41,7 +41,7 @@ const PoemForm = ({updateFn, poemInfo}) => {
             <input name="title" onChange={updateField} value={formInfo.title}></input>
 
             <label htmlFor="text">Text</label>
-            <input name="text" onChange={updateField} value={formInfo.title}></input>
+            <input name="text" onChange={updateField} value={formInfo.test}></input>
 
 
             <input type="submit"></input>
