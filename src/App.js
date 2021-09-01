@@ -28,7 +28,7 @@ const App = () => {
 
     const removePoem = (poem) => {
         console.log("removed",poem)
-        axios.delete("http://localhost:3001/api/poems" + poem.id)
+        axios.delete("http://localhost:3001/api/poems/" + poem.id)
         .then((response) => {
             console.log("remove succeeded")
             // delete local copy

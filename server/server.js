@@ -1,26 +1,29 @@
-const express = require('express') 
+const express = require('express')
+const app = express()
 const cors = require('cors')
+
+
+app.use(express.static('build'))
+app.use(cors())
+app.use(express.json())
+
 const fs = require("fs") 
 
 // Load data from JSON file into memory
 const rawData = fs.readFileSync("server/poems.json")
 const data = JSON.parse(rawData)
 
-const app = express() 
-app.use(cors())
-app.use(express.json()) 
-
 
 app.get('/api/poems', (req, res) => {
-    res.json(data.units)
+    res.json(data.poems)
 })
 
 app.get('/api/poems/:id', (req, res) => {
   const id = Number(req.params.id)
-  const unit = data.units.filter(u => u.id === id)[0]
+  const poem = data.poems.filter(p => p.id === id)[0]
   // return a 404 if there is no such poem
-  if (unit) {
-    res.json(unit)
+  if (poem) {
+    res.json(poem)
   } else {
     res.status(404)
     res.send("<h1>Poem not found.</h1>")
@@ -33,30 +36,30 @@ app.post('/api/poems', (req, res) => {
   console.log(body)
   const newPoem = {
       title: body.title,
-      code: body.code,
-      offering: body.offering,
-      id: data.units.length   
+      author: body.author,
+      text: body.text,
+      id: data.poems.length   
   }
-  data.units.push(newPoem) 
+  data.poems.push(newPoem) 
   res.json(newPoem)
 })
 
-app.post('/api/units/:id', (req, res) => {
+app.post('/api/poems/:id', (req, res) => {
   const newPoem = req.body
   const id = Number(req.params.id)
-  data.units = data.units.map(e => id === e.id ? newPoem : e)
+  data.poems = data.poems.map(e => id === e.id ? newPoem : e)
   console.log("updated", newPoem)
   res.json(newPoem)
 })
 
 
 
-app.delete('/api/units/:id', (req, res) => {
+app.delete('/api/poems/:id', (req, res) => {
   const id = Number(req.params.id)
-  const len = data.units.length
-  data.units = data.units.filter(u => u.id !== id)
+  const len = data.poems.length
+  data.poems = data.poems.filter(p => p.id !== id)
   // check whether we really deleted something and complain if not
-  if (data.units.length < len) {
+  if (data.poems.length < len) {
     res.json("deleted")
   } else {
     res.status(404)
