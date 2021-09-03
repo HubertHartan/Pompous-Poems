@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 
+import Home from "./Pages/Home"
+import Add from "./Pages/Add"
 
-import PoemForm from "./Components/PoemForm.js"
-import Poem from "./Components/Poem.js"
 import axios from 'axios'
 
 
 const App = () => {
+
+    const padding = {
+        padding: 5
+    }
+    
     const [poems,setPoems] = useState([])
     
     const addNewPoem = (newPoem) => {
@@ -57,32 +62,24 @@ const App = () => {
 
     return(
 
-        // <Router>
-        //     <div>
-        //         <Link style = {padding} to="/">Home</Link>
-        //         <Link style = {padding} to="/addpoem">Add New Poem</Link>
-        //     </div>
+        <Router>
+            <div>
+                <Link style = {padding} to="/">Home</Link>
+                <Link style = {padding} to="/addpoem">Add New Poem</Link>
+            </div>
 
-        //     <Switch>
-        //         <Route path ="/">
-        //              <Home/>
-        //         </Route>
-        //         <Route path="/addpoem">
-        //              <AddForm/>
-        //         </Route>
-              
-        //     </Switch>
-        // </Router>
+            <Switch>
+                
+                <Route path="/addpoem">
+                     <Add addFn={addNewPoem}/>
+                </Route>
+                <Route path ="/">
+                     <Home list={poems} removeFn={removePoem} reloadFn={updatePoem}/>
+                </Route>
+            </Switch>
 
+        </Router>
 
-
-        <div className = "App">
-            <PoemForm updateFn={addNewPoem}/>
-
-            <ul>
-                {poems.map((poem) => (<Poem key={poem.id} poem={poem} deleteFn={removePoem} updateFn={updatePoem}/>))}
-            </ul>
-        </div>
     );
 }
 
