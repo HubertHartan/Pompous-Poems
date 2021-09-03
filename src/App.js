@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+
+
 import PoemForm from "./Components/PoemForm.js"
 import Poem from "./Components/Poem.js"
 import axios from 'axios'
@@ -51,7 +54,28 @@ const App = () => {
         })
     }
 
+
     return(
+
+        // <Router>
+        //     <div>
+        //         <Link style = {padding} to="/">Home</Link>
+        //         <Link style = {padding} to="/addpoem">Add New Poem</Link>
+        //     </div>
+
+        //     <Switch>
+        //         <Route path ="/">
+        //              <Home/>
+        //         </Route>
+        //         <Route path="/addpoem">
+        //              <AddForm/>
+        //         </Route>
+              
+        //     </Switch>
+        // </Router>
+
+
+
         <div className = "App">
             <PoemForm updateFn={addNewPoem}/>
 
