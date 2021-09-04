@@ -35,13 +35,13 @@ const PoemForm = ({updateFn, poemInfo}) => {
     return (
         <form onSubmit={formHandler}>
             <label htmlFor="author">Author</label>
-            <input name="author" onChange={updateField} value={formInfo.code}></input>
+            <input name="author" onChange={updateField} value={formInfo.author}></input>
 
             <label htmlFor="title">Title</label>
             <input name="title" onChange={updateField} value={formInfo.title}></input>
 
             <label htmlFor="text">Text</label>
-            <input name="text" onChange={updateField} value={formInfo.test}></input>
+            <input name="text" onChange={updateField} value={formInfo.text}></input>
 
 
             <input type="submit"></input>

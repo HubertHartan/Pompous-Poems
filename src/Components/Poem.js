@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import PoemForm from './PoemForm.js'
-
+import {Link} from "react-router-dom";
 
 const Poem = ({poem, deleteFn, updateFn}) =>{
     const [editing, setEditing] = useState(false)
@@ -29,10 +29,7 @@ const Poem = ({poem, deleteFn, updateFn}) =>{
     } else {
     return (
         <li>{poem.author}: 
-        {poem.title} 
-        {poem.text}
-        <button onClick={() => deleteFn(poem)}>Delete</button>
-        <button onClick={editAction}>Edit</button>
+         <Link to={`/poems/${poem.id}`}>{poem.title} </Link> {poem.text} <button onClick={() => deleteFn(poem)}>Delete</button> <button onClick={editAction}>Edit</button>
         </li>
       )
     }
