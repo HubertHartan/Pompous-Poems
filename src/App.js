@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 
 import Home from "./Pages/Home"
 import Add from "./Pages/Add"
+import PoemPage from "./Pages/PoemPage"
 
+import Poem from "./Components/Poem"
 import axios from 'axios'
 
 
@@ -57,6 +59,11 @@ const App = () => {
             console.log(response)
             getPoems()
         })
+        .catch((error) => {
+            console.log(error)
+            // refresh the list of units from the server
+            getPoems()
+        })
     }
 
 
@@ -69,13 +76,23 @@ const App = () => {
             </div>
 
             <Switch>
-                
+                <Route path="/poems/:id">
+                     <PoemPage poems={poems}/>
+                </Route>
+
                 <Route path="/addpoem">
                      <Add addFn={addNewPoem}/>
                 </Route>
+
                 <Route path ="/">
-                     <Home list={poems} removeFn={removePoem} reloadFn={updatePoem}/>
+                    <ul>
+                        {poems.map((poem) => 
+                        (<Poem key={poem.id} poem={poem} deleteFn={removePoem} updateFn={updatePoem}/>))}
+                    </ul>
+
+                     {/* <Home list={poems} removeFn={removePoem} reloadFn={updatePoem}/> */}
                 </Route>
+
             </Switch>
 
         </Router>
