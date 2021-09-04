@@ -5,7 +5,7 @@ import Home from "./Pages/Home"
 import Add from "./Pages/Add"
 import PoemPage from "./Pages/PoemPage"
 
-import Poem from "./Components/Poem"
+
 import axios from 'axios'
 
 
@@ -16,7 +16,14 @@ const App = () => {
     }
     
     const [poems,setPoems] = useState([])
-    
+
+    const getPoems = () => {
+        axios.get("http://localhost:3001/api/poems")
+        .then((response) => {
+            setPoems(response.data)
+        })
+    }
+
     const addNewPoem = (newPoem) => {
         axios.post("http://localhost:3001/api/poems",newPoem)
         .then(response => {
@@ -25,12 +32,7 @@ const App = () => {
         })
     }
 
-    const getPoems = () => {
-        axios.get("http://localhost:3001/api/poems")
-        .then((response) => {
-            setPoems(response.data)
-        })
-    }
+   
 
     useEffect(() => {
         getPoems()
@@ -67,6 +69,8 @@ const App = () => {
     }
 
 
+
+
     return(
 
         <Router>
@@ -81,16 +85,11 @@ const App = () => {
                 </Route>
 
                 <Route path="/addpoem">
-                     <Add addFn={addNewPoem}/>
+                     <Add addFn={addNewPoem} />
                 </Route>
 
                 <Route path ="/">
-                    <ul>
-                        {poems.map((poem) => 
-                        (<Poem key={poem.id} poem={poem} deleteFn={removePoem} updateFn={updatePoem}/>))}
-                    </ul>
-
-                     {/* <Home list={poems} removeFn={removePoem} reloadFn={updatePoem}/> */}
+                    <Home list={poems} removeFn={removePoem} reloadFn={updatePoem}/>
                 </Route>
 
             </Switch>

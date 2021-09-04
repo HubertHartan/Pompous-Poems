@@ -27,14 +27,13 @@ const Poem = ({poem, deleteFn, updateFn}) =>{
         </li>
       )
     } else {
-    return (
+      return (
         <li>{poem.author}: 
-         <Link to={`/poems/${poem.id}`}>{poem.title} </Link> {poem.text} <button onClick={() => deleteFn(poem)}>Delete</button> <button onClick={editAction}>Edit</button>
+         <Link to={`/poems/${poem.id}`}>{poem.title} </Link> {poem.text} 
+         <button onClick={() => deleteFn(poem)}>Delete</button> <button onClick={editAction}>Edit</button>
         </li>
       )
     }
-
-
 }
 
 export default Poem;
