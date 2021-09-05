@@ -44,15 +44,7 @@ app.post('/api/poems', (req, res) => {
   res.json(newPoem)
 })
 
-app.post('/api/poems:id', (req, res) => {
-  const newPoem = req.body
-  const id = Number(req.params.id)
-  data.poems = data.poems.map(e => id === e.id ? newPoem : e)
-  console.log("updated", newPoem)
-  res.json(newPoem)
-})
-
-app.put('/api/poems/:id', (req, res, next) => {
+app.put('/api/poems:id', (req, res) => {
   const newPoem = req.body
   const id = Number(req.params.id)
   data.poems = data.poems.map(e => id === e.id ? newPoem : e)

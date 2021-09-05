@@ -1,14 +1,14 @@
 import React from "react";
 import Poem from "../Components/Poem.js"
+import './Home.css';
 
-
-const Home = ({list,removeFn,reloadFn}) => {
+const Home = ({list}) => {
     
     return(     
         <div>
             <ul>
                 {list.map((poem) => 
-                (<Poem key={poem.id} poem={poem} deleteFn={removeFn} updateFn={reloadFn}/>))}
+                (<Poem key={poem.id} poem={poem}/>))}
             </ul>
         </div>
     );

@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import Home from "./Pages/Home"
 import Add from "./Pages/Add"
 import PoemPage from "./Pages/PoemPage"
-
+import './App.css';
 
 import axios from 'axios'
 
@@ -18,19 +18,30 @@ const App = () => {
     const [poems,setPoems] = useState([])
 
     const getPoems = () => {
-        axios.get("http://localhost:3001/api/poems")
+        axios.get("/api/poems")
         .then((response) => {
             setPoems(response.data)
         })
     }
 
     const addNewPoem = (newPoem) => {
-        axios.post("http://localhost:3001/api/poems",newPoem)
+        axios.post("/api/poems",newPoem)
         .then(response => {
             console.log(response)
             setPoems([...poems, response.data])
         })
     }
+
+    const updatePoem = (poem) => {
+        const votes = poem.votes + 1
+        poem.votes = votes
+        console.log("updating poem", poem)
+        axios.put("/api/poems/" + poem.id, poem)
+        .then((response) => {
+          console.log("RESPONSE", response)
+          getPoems()
+        })
+      }
 
    
 
@@ -38,35 +49,8 @@ const App = () => {
         getPoems()
     },[])
 
-    const removePoem = (poem) => {
-        console.log("removed",poem)
-        axios.delete("http://localhost:3001/api/poems/" + poem.id)
-        .then((response) => {
-            console.log("remove succeeded")
-            // delete local copy
-            const newPoems = poems.filter(p => p.id !== poem.id)
-            setPoems(newPoems)
-        })
-        .catch((error) => {
-            console.log("ERROR!")
-            // refresh the list poems from the server
-            getPoems()
-        })
-    }
     
-    const updatePoem = (poem) => {
-        console.log("updating poem", poem)
-        axios.put("http://localhost:3001/api/poems/" + poem.id, poem)
-        .then((response) => {
-            console.log(response)
-            getPoems()
-        })
-        .catch((error) => {
-            console.log(error)
-            // refresh the list of units from the server
-            getPoems()
-        })
-    }
+    
 
 
 
@@ -74,14 +58,14 @@ const App = () => {
     return(
 
         <Router>
-            <div>
+            <div className='navi'>
                 <Link style = {padding} to="/">Home</Link>
                 <Link style = {padding} to="/addpoem">Add New Poem</Link>
             </div>
 
             <Switch>
                 <Route path="/poems/:id">
-                     <PoemPage poems={poems}/>
+                     <PoemPage poems={poems} updateFn={updatePoem}/>
                 </Route>
 
                 <Route path="/addpoem">
@@ -89,7 +73,7 @@ const App = () => {
                 </Route>
 
                 <Route path ="/">
-                    <Home list={poems} removeFn={removePoem} reloadFn={updatePoem}/>
+                    <Home list={poems}/>
                 </Route>
 
             </Switch>
