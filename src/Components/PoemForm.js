@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import ReactMarkdown from 'react-markdown';
 
+import './PoemForm.css';
+
 const PoemForm = ({updateFn, poemInfo}) => {
 
     let initialState = poemInfo
@@ -10,6 +12,7 @@ const PoemForm = ({updateFn, poemInfo}) => {
 
     const [formInfo, setFormInfo] = useState(initialState)
 
+    
     const updateField = (event) => {
         
         const name = event.target.attributes.name.value
@@ -34,17 +37,24 @@ const PoemForm = ({updateFn, poemInfo}) => {
     
     return (
         <form onSubmit={formHandler}>
-            <label htmlFor="author">Author</label>
-            <input name="author" onChange={updateField} value={formInfo.author}></input>
+            <div className='inputForm'>
+                <label htmlFor="author">Author: </label>
+                <input name="author" onChange={updateField} value={formInfo.author}></input>
+            </div>
 
-            <label htmlFor="title">Title</label>
-            <input name="title" onChange={updateField} value={formInfo.title}></input>
+            <div className='inputForm'>
+                <label htmlFor="title">Title: </label>
+                <input name="title" onChange={updateField} value={formInfo.title}></input>
+            </div>
 
-            <label htmlFor="text">Text</label>
-            <input name="text" onChange={updateField} value={formInfo.text}></input>
+            <div className='inputForm'>
+                <label htmlFor="text">Text: </label>
+                <input name="text" onChange={updateField} value={formInfo.text}></input>
+            </div>
 
-
-            <input type="submit"></input>
+            <div className='inputForm'>
+                <input type="submit"></input>
+            </div>
         </form>
     )
 }

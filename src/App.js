@@ -22,6 +22,7 @@ const App = () => {
         })
     }
 
+
     const addNewPoem = (newPoem) => {
         axios.post("/api/poems",newPoem)
         .then(response => {
@@ -37,7 +38,6 @@ const App = () => {
         axios.post("/api/poems/" + poem.id, poem)
         .then((response) => {
           console.log("RESPONSE", response)
-          getPoems()
         })
       }
 

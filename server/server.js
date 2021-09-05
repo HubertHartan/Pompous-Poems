@@ -44,7 +44,7 @@ app.post('/api/poems', (req, res) => {
   res.json(newPoem)
 })
 
-app.post('/api/poems:id', (req, res) => {
+app.post('/api/poems/:id', (req, res) => {
   const newPoem = req.body
   const id = Number(req.params.id)
   data.poems = data.poems.map(e => id === e.id ? newPoem : e)
@@ -53,19 +53,6 @@ app.post('/api/poems:id', (req, res) => {
 })
 
 
-
-app.delete('/api/poems/:id', (req, res) => {
-  const id = Number(req.params.id)
-  const len = data.poems.length
-  data.poems = data.poems.filter(p => p.id !== id)
-  // check whether we really deleted something and complain if not
-  if (data.poems.length < len) {
-    res.json("deleted")
-  } else {
-    res.status(404)
-    res.send("<h1>Poem not found</h1>")
-  }
-})
 
 
 
