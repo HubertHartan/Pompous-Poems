@@ -34,7 +34,7 @@ const App = () => {
         const votes = poem.votes + 1
         poem.votes = votes
         console.log("updating poem", poem)
-        axios.put("/api/poems/" + poem.id, poem)
+        axios.post("/api/poems/" + poem.id, poem)
         .then((response) => {
           console.log("RESPONSE", response)
           getPoems()

@@ -4,12 +4,18 @@ import './Home.css';
 
 const Home = ({list}) => {
     
-    return(     
+    return(
         <div>
-            <ul>
-                {list.map((poem) => 
-                (<Poem key={poem.id} poem={poem}/>))}
-            </ul>
+            <div className='pageTitle'> 
+                Popular Poetry
+            </div>
+
+            <div>
+                <ul>
+                    {list.map((poem) => 
+                    (<Poem key={poem.id} poem={poem}/>))}
+                </ul>
+            </div>
         </div>
     );
     
