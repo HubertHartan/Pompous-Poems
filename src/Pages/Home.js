@@ -13,9 +13,9 @@ const Home = ({list}) => {
             <div>
                 <ul>
                     {/*Sorts the poems based on descending number of votes 
-                    Then displays only the top 5 most voted poems
+                    Then displays only the top 10 most voted poems
                     */}
-                    {list.sort((a,b) => b.votes-a.votes).slice(0,5).map((poem) => 
+                    {list.sort((a,b) => b.votes-a.votes).slice(0,10).map((poem) => 
                     (<Poem key={poem.id} poem={poem}/>))}
                 </ul>
             </div>
