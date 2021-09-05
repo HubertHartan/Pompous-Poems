@@ -16,7 +16,7 @@ const PoemForm = ({updateFn, poemInfo}) => {
     const updateField = (event) => {
         
         const name = event.target.attributes.name.value
-        console.log(name, event.target.value)
+     
         if (name === "title") {
             setFormInfo({...formInfo, title: event.target.value})
         } else if (name === "author") {
@@ -49,7 +49,7 @@ const PoemForm = ({updateFn, poemInfo}) => {
 
             <div className='inputForm'>
                 <label htmlFor="text">Text: </label>
-                <input name="text" onChange={updateField} value={formInfo.text}></input>
+               <textarea name="text" onChange={updateField} value={formInfo.text}> <ReactMarkdown></ReactMarkdown></textarea>
             </div>
 
             <div className='inputForm'>

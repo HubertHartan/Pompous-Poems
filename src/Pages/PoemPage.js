@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {useParams} from "react-router-dom";
-
+import ReactMarkdown from 'react-markdown';
 
 
 const PoemPage = ({poems,voteFn}) => {
@@ -19,7 +19,7 @@ const PoemPage = ({poems,voteFn}) => {
         <div>
             <div>{poem.title}</div>
             <div>{poem.author}</div>
-            <div>{poem.text}</div>
+            <div><ReactMarkdown>{poem.text}</ReactMarkdown></div>
             <div>{votes} Votes</div>
             <button onClick={voteHandler}>Vote</button>
             
