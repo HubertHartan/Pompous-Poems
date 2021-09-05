@@ -9,6 +9,7 @@ const PoemPage = ({poems,voteFn}) => {
     
     const [votes,setVotes] = useState(poem.votes)
 
+    //Updates desplay of votes when button is pressed
     const voteHandler = (event) => {
         event.preventDefault()
         voteFn(poem)
@@ -17,9 +18,9 @@ const PoemPage = ({poems,voteFn}) => {
 
     return(
         <div>
-            <div>{poem.title}</div>
-            <div>{poem.author}</div>
-            <div><ReactMarkdown>{poem.text}</ReactMarkdown></div>
+            <div className='poemTitle'>{poem.title}</div>
+            <div className='poemAuthor'>By: {poem.author}</div>
+            <div className='poemText'><ReactMarkdown>{poem.text}</ReactMarkdown></div>
             <div>{votes} Votes</div>
             <button onClick={voteHandler}>Vote</button>
             

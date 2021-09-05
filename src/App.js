@@ -15,6 +15,8 @@ const App = () => {
     
     const [poems,setPoems] = useState([])
 
+
+    //Request Calls to Backend
     const getPoems = () => {
         axios.get("/api/poems")
         .then((response) => {
@@ -54,7 +56,7 @@ const App = () => {
 
 
     return(
-
+        //Navigation to different pages
         <Router>
             <div className='navi'>
                 <ul>
