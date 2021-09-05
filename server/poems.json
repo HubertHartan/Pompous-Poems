@@ -2,25 +2,40 @@
     "poems": [
         {
             "id": 0,
-            "title": "Campervan",
-            "author": "Bob Bobalooba",
-            "text":"**test**",
-            "votes":5
-        },
-        {
-            "id": 1,
             "title": "Tree",
             "author": "Robert Bobbert",
-            "text":"test",
+            "text":"Whose tree is that? I think I know.  \nIts owner is quite happy though.  \nFull of joy like a vivid rainbow,  \nI watch him laugh. I cry hello.  \n  \nHe gives his tree a shake,  \nAnd laughs until her belly aches.  \nThe only other sound's the break,  \nOf distant waves and birds awake.  \n",
             "votes": 0
         },
         {
-            "id": 2,
+            "id": 1,
             "title": "Car",
             "author": "Steven Leven",
-            "text":"test",
+            "text":"Whose car is that? I think I know.  \nIts owner is quite sad though.  \nIt really is a tale of woe,  \nI watch her frown. I cry hello.  \n  \nShe gives her car a shake,  \nAnd sobs until the tears make.  \nThe only other sound's the break, \nOf distant waves and birds awake.",
             "votes": 2
+        },
+        {
+            "id": 2,
+            "title": "Chocolate",
+            "author": "Hubert Hartan",
+            "text":"The chocolate is moldy, delicious and deep,  \nBut he has promises to keep,  \nTormented with nightmares he never sleeps.  \nRevenge is a promise a man should keep.  \n  \nHe rises from his cursed bed,  \nWith thoughts of violence in his head,  \nA flash of rage and he sees red.  \nWithout a pause I turned and fled.  \n",
+            "votes": 100
+        },
+        {
+            "id": 3,
+            "title": "Primogems",
+            "author": "Liu Wei",
+            "text":"She gives her primogems a shake,.  \nAnd laughs until her belly aches.  \nThe only other sound's the break,  \nOf distant waves and birds awake.  \n  \nThe primogems are hopeful, desperate and deep,  \nBut she has promises to keep,  \nAfter cake and lots of sleep. \nSweet dreams come to her cheap.",
+            "votes": 20
+        },
+        {
+            "id": 4,
+            "title": "Two Doctors, 6 Cheeses",
+            "author": "Gouda McHouda",
+            "text":"See the Eating of the Doctor,  \nI think he's angry at the proctor.  \n  \nHe finds it hard to see the Parmesan,  \nOvershadowed by the Yellow polygon.  \n  \nWho is that Sleeping near the mouse?  \nI think she'd like to eat the house.  \n  \nShe is but a Stinky Doctor,  \nAdmired as she sits upon a proctor.  \n  \nHer Delicious car is just a brioche,  \nIt needs no gas, it runs on moesch.  \n  \nShe's not alone she brings a Gouda,  \na pet Mouse, and lots of dowda.  \n  \nThe Mouse likes to chase a Cheddar,  \nEspecially one that's in the leder.  \n  \nThe Doctor shudders at the Big Brie  \nHe want to leave but she wants the decree.  \n",
+            "votes": 2000
         }
+        
                 
 
 
