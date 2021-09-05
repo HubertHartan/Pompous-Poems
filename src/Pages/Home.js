@@ -1,6 +1,6 @@
 import React from "react";
 import Poem from "../Components/Poem.js"
-import './Home.css';
+
 
 const Home = ({list}) => {
     
@@ -12,7 +12,10 @@ const Home = ({list}) => {
 
             <div>
                 <ul>
-                    {list.map((poem) => 
+                    {/*Sorts the poems based on descending number of votes 
+                    Then displays only the top 5 most voted poems
+                    */}
+                    {list.sort((a,b) => b.votes-a.votes).slice(0,5).map((poem) => 
                     (<Poem key={poem.id} poem={poem}/>))}
                 </ul>
             </div>
