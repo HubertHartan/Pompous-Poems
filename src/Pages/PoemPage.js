@@ -3,7 +3,7 @@ import {useParams} from "react-router-dom";
 
 import axios from 'axios'
 
-const PoemPage = ({poems,updateFn}) => {
+const PoemPage = ({poems,voteFn}) => {
     const id = useParams().id
     const poem = poems.find(p => p.id === Number(id))
     
@@ -11,16 +11,15 @@ const PoemPage = ({poems,updateFn}) => {
 
     const voteHandler = (event) => {
         event.preventDefault()
-        updateFn(poem)
+        voteFn(poem)
         setVotes(votes+1)
     }
 
     return(
         <div>
-            <h2>{poem.title}</h2>
+            <div>{poem.title}: {votes} Votes</div>
             <div>{poem.author}</div>
-            <div><strong>{poem.text}</strong></div>
-            <div>{votes}</div>
+            <div>{poem.text}</div>
 
             <button onClick={voteHandler}>Vote</button>
             

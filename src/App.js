@@ -31,7 +31,7 @@ const App = () => {
         })
     }
 
-    const updatePoem = (poem) => {
+    const upVote = (poem) => {
         const votes = poem.votes + 1
         poem.votes = votes
         console.log("updating poem", poem)
@@ -65,7 +65,7 @@ const App = () => {
 
             <Switch>
                 <Route path="/poems/:id">
-                     <PoemPage poems={poems} updateFn={updatePoem}/>
+                     <PoemPage poems={poems} voteFn={upVote}/>
                 </Route>
 
                 <Route path="/addpoem">
