@@ -17,10 +17,10 @@ const PoemPage = ({poems,voteFn}) => {
 
     return(
         <div>
-            <div>{poem.title}: {votes} Votes</div>
+            <div>{poem.title}</div>
             <div>{poem.author}</div>
             <div>{poem.text}</div>
-
+            <div>{votes} Votes</div>
             <button onClick={voteHandler}>Vote</button>
             
         </div>
