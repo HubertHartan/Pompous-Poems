@@ -49,8 +49,7 @@ const App = () => {
         getPoems()
     },[])
 
-    
-    
+
 
 
 
@@ -71,7 +70,7 @@ const App = () => {
                 </Route>
 
                 <Route path="/addpoem">
-                     <Add addFn={addNewPoem} />
+                     <Add addFn={addNewPoem}/>
                 </Route>
 
                 <Route path ="/">
