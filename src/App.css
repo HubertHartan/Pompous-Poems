@@ -1,3 +1,20 @@
+
+/* General Styling */
+
+div{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+} 
+
+li{
+    font-family: Arial, Helvetica, sans-serif;
+    list-style: none;
+    padding-top: 4%;
+    padding-bottom: 2%;
+}
+
+/* Styling for custom navigation bar */
+
 .navi{
     background-color: black;
     padding: 0em 5em;
@@ -20,3 +37,47 @@
     background-color: white;
     color:black;
 }
+
+
+/* Styling for Poem Component */
+.title{
+    color:black;
+    font-weight: bold;
+    font-size: large;
+    padding-bottom: 1%;
+}
+.author{
+    font-size: medium;
+}
+
+.pageTitle{
+    padding-top: 2%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+    color:black;
+    font-weight: bold;
+}
+
+/* Styling for PoemForm Component */
+.inputForm{
+    text-align: center;
+    padding-top: 3%;
+}
+
+/* Styling for PoemPage */
+
+.poemTitle{
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.poemAuthor{
+    font-size: large;
+    font-weight: bold;
+}
+
+.poemText{
+    font-size: medium;
+    padding-top: 5%;
+}
+
