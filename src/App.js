@@ -11,9 +11,7 @@ import axios from 'axios'
 
 const App = () => {
 
-    const padding = {
-        padding: 5
-    }
+ 
     
     const [poems,setPoems] = useState([])
 
@@ -59,8 +57,10 @@ const App = () => {
 
         <Router>
             <div className='navi'>
-                <Link style = {padding} to="/">Home</Link>
-                <Link style = {padding} to="/addpoem">Add New Poem</Link>
+                <ul>
+                <Link to="/"> <li>Home</li></Link>
+                <Link to="/addpoem"><li>Add New Poem</li></Link>
+                </ul>
             </div>
 
             <Switch>
