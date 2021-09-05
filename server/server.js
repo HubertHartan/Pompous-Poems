@@ -9,7 +9,7 @@ app.use(express.json())
 
 const fs = require("fs") 
 
-// Load data from JSON file into memory
+// Loads data from JSON file into memory
 const rawData = fs.readFileSync("server/poems.json")
 const data = JSON.parse(rawData)
 

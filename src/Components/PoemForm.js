@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactMarkdown from 'react-markdown';
 
-import './PoemForm.css';
+
 
 const PoemForm = ({updateFn, poemInfo}) => {
 
@@ -49,11 +49,11 @@ const PoemForm = ({updateFn, poemInfo}) => {
 
             <div className='inputForm'>
                 <label htmlFor="text">Text: </label>
-               <textarea name="text" onChange={updateField} value={formInfo.text}> <ReactMarkdown></ReactMarkdown></textarea>
+                <textarea name="text" onChange={updateField} value={formInfo.text}> <ReactMarkdown></ReactMarkdown></textarea>
             </div>
 
             <div className='inputForm'>
-                <input type="submit"></input>
+                <input type="submit" value="Add Poem"></input>
             </div>
         </form>
     )
