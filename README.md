@@ -58,7 +58,7 @@ This project serves as a quick prototype of a poetry sharing website and it is c
 
 These are the following screens and functionalities present in the application currently:
 - Home Page
-    - List of top 5 poetries by number of votes
+    - List of top 10 poetries by number of votes
 - Adding Page
     - Form to input new poem
 - Individual Poem Pages
